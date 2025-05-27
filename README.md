@@ -2,9 +2,9 @@
 
 Training materials for the training camp about using tensor network methods for time evolution.
 - **Time**: 
-    - Discussion and planning: June 14-16, 2025, 10:00-17:00
-    - Coding and writing: June 17-23, 2025
-    - Sharing: June 24, 2025, 10:00-17:00
+    - Discussion and planning: June 2-4, 2025, 10:00-17:00
+    - Coding and writing: June 5-11, 2025
+    - Sharing: June 12, 2025, 10:00-17:00
 - **Location**: TBD
 
 ## Objectives
