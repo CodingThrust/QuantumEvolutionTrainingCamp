@@ -1,6 +1,11 @@
 # Quantum Evolution Training Camp
 
 Training materials for the training camp about using tensor network methods for time evolution.
+- **Time**: 
+    - Discussion and planning: June 14-16, 2025, 10:00-17:00
+    - Coding and writing: June 17-23, 2025
+    - Sharing: June 24, 2025, 10:00-17:00
+- **Location**: TBD
 
 ## Objectives
 
