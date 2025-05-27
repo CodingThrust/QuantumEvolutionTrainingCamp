@@ -16,8 +16,11 @@ Participants will be divided into two groups, one group implements the GSE-TDVP 
 
 ## References
 
+### Group 1
 - TDVP method basics[^Vanderstraeten2019]
 - GSE-TDVP method[^Yang2020] (code: https://github.com/ITensor/ITensorMPS.jl)
+
+### Group 2
 - Belief propagation for gauging tensor networks[^Tindall2023]. It can be generalized the arbitrary geometry[^Gray2024] (code: https://github.com/ITensor/ITensorNetworks.jl)
 - Methods to resolve the small loop problem: It depends on the loop size and loop correlations, lattices in 2D with smaller loop sizes probably would need something beyond BP like block BP[^Guo2023], boundary MPS, or loop corrections[^Evenbly2024]. In practice, it can be sufficient to use BP to evolve the state and then use approximations beyond BP to perform measurements, see for example[^Tindall2025].
 - For Rydberg atoms, there will be the added complexity of handling long range interactions. Related work that I'm aware of is:[^O’Rourke2020] and[^O’Rourke2023].
