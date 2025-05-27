@@ -15,7 +15,7 @@ Participants will be divided into two groups, one group implements the GSE-TDVP 
    - Group 1: GSE-TDVP method,
    - Group 2: Simple update with gauge fixing method.
 2. Challenge! Simulated a 1D quantum many body scar example with the implemented methods, test with the exact simulation results. The winning group will get a souvenir (TBD).
-   Score: Speed to reach $10^{-2}$ precision in the simulation task detailed in [this page](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/3.quantum-scar/main/).
+   Score: Speed to reach $10^{-2}$ precision in the simulation task detailed in [this page](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/6.MWIS/main/).
 3. Practical challenge! Simulate the 2D kicked Ising dynamics in IBM's quantum experiment [this page](https://www.nature.com/articles/s41586-023-06096-3) by classical computation. Can you simulate the dynamics for $\pi/2-\epsilon$ pulse of Ising interaction i.e. away from the maximally entangling $CZ$ gate?
   
 
