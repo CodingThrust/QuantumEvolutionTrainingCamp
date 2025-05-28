@@ -7,13 +7,6 @@ Pages = ["lattice/lattice.jl"]
 Order = [:type, :function]
 ```
 
-## PXP approximation
-```@autodocs
-Modules = [RydbergToolkit.YaoSubspaceArrayReg]
-Pages = ["subspace/subspace.jl", "subspace/type.jl", "subspace/instruct.jl", "subspace/measure.jl", "subspace/mat.jl"]
-Order = [:type, :function]
-```
-
 ## Simulation
 
 Required interfaces:

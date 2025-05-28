@@ -10,26 +10,23 @@ using LinearAlgebra
 export GeneralLattice, RectangularLattice, ChainLattice, SquareLattice, KagomeLattice, TriangularLattice, HoneycombLattice, LiebLattice
 export generate_sites
 
-# PXP approximation
-export Subspace, SubspaceArrayReg
-
 # simulation
 export RydbergSystem, RydbergHamiltonian, interaction_strength, natoms
 export simulate, SimulationIterator, create_zero_state, time_evolve_step!, rydberg_hamiltonian
-export ExactSimulator, SubspaceSimulator, blockade_subspace
+export ExactSimulator
 export density, entropy, probability, psi, expect
 
 # pulse
 export piecewise_linear, GlobalPulse
 
-include("subspace/subspace.jl")
-using .YaoSubspaceArrayReg: Subspace, indexof, SubspaceArrayReg
+# visualization
+export plot_pulse, plot_lattice, plot_sites
 
 include("Core.jl")
 include("utils.jl")
 include("timedependent.jl")
 include("exact.jl")
 include("lattice/lattice.jl")
-include("blockade_subspace.jl")
+include("visualize.jl")
 
 end

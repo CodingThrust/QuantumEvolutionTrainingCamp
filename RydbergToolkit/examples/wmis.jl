@@ -1,9 +1,8 @@
 # Ref: https://queracomputing.github.io/Bloqade.jl/dev/tutorials/6.MWIS/main/
 using RydbergToolkit, RydbergToolkit.Graphs
-using Random, RydbergToolkit.YaoBlocks
+using Random, RydbergToolkit.YaoBlocks, RydbergToolkit.YaoBlocks.BitBasis
 using GenericTensorNetworks
 using RydbergToolkit.StaticArrays
-using RydbergToolkit.MPSKit: truncdim
 using CairoMakie
 
 function create_wmis_problem()
@@ -32,10 +31,11 @@ function simulate_wmis(; Ω_max, Δ_max, t_max, weights, backend, atoms, MIS_con
     P_MWIS = [] # MIS probability
     regs = []
     sys = RydbergSystem(SVector.(atoms))
-    densities = []
+    densities_all = []
 
-    for t in 0.1:t_max*1.25:t_max*2.5
+    for t in 0.1:t_max*0.25:t_max*2.5
         @info "tmax = $t"
+        densities = Vector{Float64}[]
         Ω1, Δ1 = build_adiabatic_sweep(Ω_max, Δ_max, t, weights)
         reg = create_zero_state(backend, sys)
         iter = SimulationIterator(reg, backend, sys, Δ1, Ω1; tstart=0.0, tstop=t, dt=dt, pxp_cutoff=4.5, longtail_cutoff=4.5)
@@ -49,8 +49,9 @@ function simulate_wmis(; Ω_max, Δ_max, t_max, weights, backend, atoms, MIS_con
         push!(t_list, t)
         push!(P_MWIS, p)
         push!(regs, iter.reg)
+        push!(densities_all, densities)
     end
-    return t_list, P_MWIS, regs, densities
+    return t_list, P_MWIS, regs, densities_all
 end
 
 function plot_wmis(t_list, pmis)
@@ -81,18 +82,6 @@ t_max = 1.5
 plot_pulse(first ∘ Δ1, first ∘ Ω1, (0.0, t_max))
 plot_sites(atoms; annotate=true)
 
-t_list1, pmis1, reg1, densities1 = simulate_wmis(; atoms, MIS_config, Ω_max, Δ_max, t_max, weights=wts, backend=ExactSimulator())
-fig = plot_wmis(t_list1, pmis1)
-fig = plot_densities(densities1; total_time=t_max, nsites=length(atoms))
-
-t_list2, pmis2, reg2, densities2 = simulate_wmis(; atoms, MIS_config, Ω_max, Δ_max, t_max, weights=wts, backend=SubspaceSimulator(4.5))
-fig = plot_wmis(t_list2, pmis2)
-fig = plot_densities(densities2; total_time=t_max, nsites=length(atoms))
-
-t_list3, pmis3, reg3, densities3 = simulate_wmis(; atoms, MIS_config, Ω_max, Δ_max, t_max, weights=wts, backend=MPSKitSimulator(method=TDVP(), chi=100, stepwise_time_dependent=false), dt=1e-2)
-fig = plot_wmis(t_list3, pmis3)
-fig = plot_densities(densities3; total_time=t_max, nsites=length(atoms))
-
-t_list4, pmis4, reg4, densities4 = simulate_wmis(; atoms, MIS_config, Ω_max, Δ_max, t_max, weights=wts, backend=MPSKitSimulator(chi=50, stepwise_time_dependent=true))
-fig = plot_wmis(t_list4, pmis4)
-fig = plot_densities(densities4; total_time=t_max, nsites=length(atoms))
+t_list, pmis, reg, densities = simulate_wmis(; atoms, MIS_config, Ω_max, Δ_max, t_max, weights=wts, backend=ExactSimulator())
+fig = plot_wmis(t_list, pmis)
+fig = plot_densities(densities[end]; total_time=t_max, nsites=length(atoms))

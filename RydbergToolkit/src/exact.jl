@@ -7,18 +7,6 @@ Exact simulator using Yao.jl.
 """
 struct ExactSimulator <: AbstractYaoSimulator end
 
-"""
-    SubspaceSimulator{T} <: AbstractYaoSimulator
-
-Subspace simulator using Yao.jl.
-
-# Fields
-- `blockade_radius`: the blockade radius of the Rydberg system.
-"""
-struct SubspaceSimulator{T} <: AbstractYaoSimulator
-    blockade_radius::T
-end
-
 function rydberg_hamiltonian(::AbstractYaoSimulator, sys::RydbergSystem{D, T}, detuning::Vector{T}, rabi::Vector{T}; pxp_cutoff=0, longtail_cutoff=Inf) where {D, T}
     n = natoms(sys)
     @assert length(detuning) == length(rabi) == n "detuning and rabi must have the same length as the number of vertices in the topology, got $(length(detuning)), $(length(rabi)) and $n"
@@ -47,10 +35,6 @@ function prepare_pxp_interaction(sys::RydbergSystem{D, T}; pxp_cutoff::T=0, long
 end
 
 create_zero_state(::ExactSimulator, sys::RydbergSystem{D, T}) where {D, T} = zero_state(Complex{T}, length(sys.coordinates))
-function create_zero_state(sim::SubspaceSimulator{T}, sys::RydbergSystem{D, T}) where {D, T}
-    return zero_state(Complex{T}, blockade_subspace(sys.coordinates, sim.blockade_radius))
-end
-
 function time_evolve_step!(::AbstractYaoSimulator, reg::AbstractRegister, H::AbstractBlock, dt::Real)
     return apply!(reg, YaoBlocks.time_evolve(H, dt))
 end
@@ -67,8 +51,4 @@ end
 
 function psi(reg::ArrayReg, config::DitStr)
     return reg.state[config.buf + 1]
-end
-function psi(reg::SubspaceArrayReg, config::DitStr)
-    idx = indexof(reg.subspace, config)
-    return reg.state[idx]
 end

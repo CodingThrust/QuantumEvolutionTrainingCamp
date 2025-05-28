@@ -19,19 +19,6 @@ end
     @test expect(op, reg) ≈ 0.002247748148724942 rtol=1e-5
 end
 
-@testset "subspace simulation" begin
-    unit = 5.0
-    sys = RydbergSystem([[0.0], [unit]])
-    detuning = GlobalPulse(piecewise_linear([0.0, 1.0, 2.0], [1.0, 2.0, 3.0]), natoms(sys))
-    rabi = GlobalPulse(piecewise_linear([0.0, 1.0, 2.0], [1.0, 2.0, 3.0]), natoms(sys))
-    reg = create_zero_state(SubspaceSimulator(1.5unit), sys)
-    @test length(reg.subspace.basis) == 3
-    tspan = (0.0, 1.5)
-    reg = simulate(reg, SubspaceSimulator(1.5unit), sys, detuning, rabi, tspan; dt=1e-3, pxp_cutoff=1.5unit, longtail_cutoff=1.5unit)
-    op = kron(P1, I2)
-    @test expect(op, reg) ≈ 0.19416627201878447 rtol=1e-5
-end
-
 @testset "scar simulation" begin
     Δ1 = piecewise_linear([0.0, 0.3, 1.6, 2.2, 2.2+1e-10, 4.2], 2π * [-10.0, -10.0, 10.0, 10.0, 0.0, 0.0]);
     Ω1 = piecewise_linear([0.0, 0.05, 1.6, 2.2, 2.2+1e-10, 4.2], 2π * [0.0, 4.0, 4.0, 0.0, 2.0, 2.0]);

@@ -1,7 +1,0 @@
-/Manifest*.toml
-examples/Manifest.toml
-.vscode/
-docs/build/
-docs/Manifest.toml
-docs/src/generated/
-.DS_Store

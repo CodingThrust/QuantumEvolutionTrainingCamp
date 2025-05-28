@@ -10,16 +10,12 @@ end
     include("timedependent.jl")
 end
 
-@testset "subspace" begin
-    include("subspace/subspace.jl")
-end
-
 @testset "lattice" begin
     include("lattice/lattice.jl")
 end
 
-@testset "blockade_subspace" begin
-    include("blockade_subspace.jl")
+@testset "visualize" begin
+    include("visualize.jl")
 end
 
 DocMeta.setdocmeta!(RydbergToolkit, :DocTestSetup, :(using RydbergToolkit); recursive=true)

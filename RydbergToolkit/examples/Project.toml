@@ -1,3 +1,4 @@
 [deps]
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+GenericTensorNetworks = "3521c873-ad32-4bb4-b63d-f4f178f42b49"
 RydbergToolkit = "1d0f6b15-8c76-46ac-86ab-cfb3adf84139"
