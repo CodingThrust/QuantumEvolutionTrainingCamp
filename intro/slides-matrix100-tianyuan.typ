@@ -54,8 +54,8 @@
 - Day 1: Feel the problem, read the papers and exchange ideas (4PM-6PM, one hour each group).
 - Day 2: Imagine how to solve the problem, make a plan through GitHub issues, share your GitHub issues and projects (11AM-12AM, half hour each group).
 - Day 3: Do the change, write a prototype, showcase (4PM-6PM, one hour each group).
-- Day 4-X: Implement rest of the plan (4PM-6PM, one hour each group).
-- Day X+1: Write a blog post (11AM-12AM, half hour each group).
+- Day 4-X: Implement rest of the plan.
+- Day X+1: Write a blog post.
 
 
 == Independent set problem
