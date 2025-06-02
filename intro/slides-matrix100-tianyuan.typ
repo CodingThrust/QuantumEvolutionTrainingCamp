@@ -34,30 +34,6 @@
 #let (slide, empty-slide, title-slide, outline-slide, new-section-slide, ending-slide) = utils.slides(m)
 #show: slides.with()
 
-== Design for change
-
-- #text(red)[Feel] the problem (read the papers)
-- #text(blue)[Imagine] the solution (discuss and make a plan through GitHub issues)
-- #text(green)[Do] the change (write the code)
-- #text(yellow)[Share] the solution (write a blog post - Zhihu)
-
-== To proceed
-
-- Divide into two groups
-    - GSE-TDVP
-    - BP-Gauge + Simple Update
-
-- Copy the project in folder `RydbergToolkit` to your own GitHub account
-
-==
-
-- Day 1: Feel the problem, read the papers and exchange ideas (4PM-6PM, one hour each group).
-- Day 2: Imagine how to solve the problem, make a plan through GitHub issues, share your GitHub issues and projects (11AM-12AM, half hour each group).
-- Day 3: Do the change, write a prototype, showcase (4PM-6PM, one hour each group).
-- Day 4-X: Implement rest of the plan.
-- Day X+1: Write a blog post.
-
-
 == Independent set problem
 #timecounter(1)
 
@@ -95,9 +71,41 @@ The set: ${b, d, e}$ can be represented by $n_b = n_d = n_e = 1$ and $n_a = n_c 
   - Independent set problem on King's subgraph is NP-hard @Pichler2018, and is implementable on Rydberg atoms arrays @Ebadi2022.
 ])
 
+
+== Design for change
+
+- #text(red)[Feel] the problem (read the papers)
+- #text(blue)[Imagine] the solution (discuss and make a plan through GitHub issues)
+- #text(green)[Do] the change (write the code)
+- #text(yellow)[Share] the solution (write a blog post - Zhihu)
+
+== To proceed
+
+- Divide into two groups
+    - GSE-TDVP
+    - BP-Gauge + Simple Update
+
+- Copy the project in folder `RydbergToolkit` to your own GitHub account
+
+==
+
+- Day 1: Feel the problem, read the papers and exchange ideas (4PM-6PM, one hour each group).
+- Day 2: Imagine how to solve the problem, make a plan through GitHub issues, share your GitHub issues and projects (11AM-12AM, half hour each group).
+- Day 3: Do the change, write a prototype, showcase (4PM-6PM, one hour each group).
+- Day 4-X: Implement rest of the plan.
+- Day X+1: Write a blog post.
+
+
 == Resources
 
+- Project repo: https://github.com/CodingThrust/QuantumEvolutionTrainingCamp
 
+=== Huanhai Zhou's recommendations
 
+- 推荐这个讲TDVP的视频，是我唯一一个能听明白的[破涕为笑]：https://cast.itunes.uni-muenchen.de/clips/tdCyLOqHgq/vod/high_quality.mp4
+
+- 是一系列lecture里的一部分，notes也写得挺初学者友好：https://www2.physik.uni-muenchen.de/lehre/vorlesungen/sose_20/tensor_networks_20/skript/index.html
+
+- https://edoc.ub.uni-muenchen.de/35102/1/Grundner_Martin.pdf#page34 这个thesis对TDVP GSE的介绍比原文好读
 ==
 #bibliography("refs.bib")
