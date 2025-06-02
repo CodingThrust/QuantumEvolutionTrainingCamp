@@ -95,6 +95,10 @@ The set: ${b, d, e}$ can be represented by $n_b = n_d = n_e = 1$ and $n_a = n_c 
 - Day 4-X: Implement rest of the plan.
 - Day X+1: Write a blog post.
 
+== How to ask questions
+
+- _On the same page_: a group of people are working on the same problem, and their understanding of the problem is similar.
+- If not, _go through > pop up questions_: Can I take your 1 hour to *go through* a recent paper that is crucial for the project? (mindset: any individual has a very *limited knowledge* of the project, you know better about most questions you encountered in the literature. Before sharing any idea, he needs to "feel" the problem.)
 
 == Resources
 
