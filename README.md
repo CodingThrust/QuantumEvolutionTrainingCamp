@@ -29,6 +29,7 @@ Participants will be divided into two groups, one group implements the GSE-TDVP 
 - Belief propagation for gauging tensor networks[^Tindall2023]. It can be generalized the arbitrary geometry[^Gray2024] (code: https://github.com/ITensor/ITensorNetworks.jl)
 - Methods to resolve the small loop problem: It depends on the loop size and loop correlations, lattices in 2D with smaller loop sizes probably would need something beyond BP like block BP[^Guo2023], boundary MPS, or loop corrections[^Evenbly2024]. In practice, it can be sufficient to use BP to evolve the state and then use approximations beyond BP to perform measurements, see for example[^Tindall2025].
 - For Rydberg atoms, there will be the added complexity of handling long range interactions. Related work that I'm aware of is:[^O’Rourke2020] and[^O’Rourke2023].
+- Background knowledge about adiabatic dynamics scaling, across or near the Ising CFTs: 1+1D latest quantum experiment [^Miessen24]; 2+1D latest classical simulation [^Schmitt22] on 16-by-16 lattice combining TDVP, neural quantum state, iPEPS methods. 
 
 [^Yang2020]: Yang, M., White, S.R., 2020. Time Dependent Variational Principle with Ancillary Krylov Subspace. Phys. Rev. B 102, 094315. https://doi.org/10.1103/PhysRevB.102.094315
 [^Vanderstraeten2019]: Vanderstraeten, L., Haegeman, J., Verstraete, F., 2019. Tangent-space methods for uniform matrix product states. SciPost Physics Lecture Notes 7, 1–77. https://doi.org/10.21468/scipostphyslectnotes.7
@@ -40,3 +41,6 @@ Participants will be divided into two groups, one group implements the GSE-TDVP 
 
 [^O’Rourke2020]: O’Rourke, M.J., Chan, G.K.-L., 2020. A simplified and improved approach to tensor network operators in two dimensions. Phys. Rev. B 101, 205142. https://doi.org/10.1103/PhysRevB.101.205142
 [^O’Rourke2023]: O’Rourke, M.J., Chan, G.K.-L., 2023. Entanglement in the quantum phases of an unfrustrated Rydberg atom array. Nat Commun 14, 5397. https://doi.org/10.1038/s41467-023-41166-0
+
+[^Miessen24]: Alexander Miessen, Daniel J. Egger, Ivano Tavernelli and Guglielmo Mazzola, Benchmarking Digital Quantum Simulations Above Hundreds of Qubits Using Quantum Critical Dynamics, PRX Quantum 5, 040320 (2024). https://journals.aps.org/prxquantum/abstract/10.1103/PRXQuantum.5.040320
+[^Schmitt22]: Markus Schmitt, Marek M. Rams, Jacek Dziarmaga, Markus Heyl, Wojciech H. Zurek, Quantum phase transition dynamics in thetwo-dimensional transverse-field Ising model, Science Advance 8, 6850 (2022). https://www.science.org/doi/10.1126/sciadv.abl6850
